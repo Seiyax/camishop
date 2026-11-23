@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAMI — Tarlac State University student marketplace</title>
+  <meta name="description" content="CAMI is a verified peer-to-peer student marketplace mobile app for Tarlac State University. Coming soon.">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/cami-icon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/cami-icon-64.png">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="apple-touch-icon" sizes="192x192" href="assets/cami-icon-192.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="CAMI home">
+        <span class="logo-housing logo-housing--nav">
+          <img src="assets/cami-icon-192.png" srcset="assets/cami-icon-192.png 1x, assets/cami-icon-512.png 2x" alt="CAMI logo" class="official-logo" width="44" height="44">
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">CAMI</span>
+          <span class="brand-sub">Tarlac State University</span>
+        </span>
+      </a>
+
+      <nav class="site-nav" id="siteNav" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#categories">Categories</a>
+        <a href="#campuses">Campuses</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#contact" class="btn-terracotta btn-nav">
+          Contact us
+        </a>
+
+        <button
+          type="button"
+          class="menu-toggle"
+          id="menuToggle"
+          aria-expanded="false"
+          aria-controls="mobileNav"
+          aria-label="Open menu"
+        >
+          <svg class="ui-icon icon-menu" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <line x1="4" y1="6" x2="20" y2="6"/>
+            <line x1="4" y1="12" x2="20" y2="12"/>
+            <line x1="4" y1="18" x2="20" y2="18"/>
+          </svg>
+          <svg class="ui-icon icon-close" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile" hidden>
+      <div class="container mobile-nav-inner">
+        <a href="#features">Features</a>
+        <a href="#categories">Categories</a>
+        <a href="#campuses">Campuses</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- 1. Hero -->
+    <section id="top" class="section hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>Buy, sell and offer services on campus.</h1>
+          <p class="hero-sub">
+            A verified peer-to-peer student marketplace built exclusively for Tarlac State University. Trade items, snacks, and campus services safely between classes.
+          </p>
+
+          <div class="soon-row">
+            <span class="coming-soon-badge">
+              <svg class="ui-icon ui-icon--sm" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
+              <span>Coming soon</span>
+            </span>
+            <span class="soon-caption">In development for TSU students</span>
+          </div>
+
+          <div class="store-actions">
+            <button
+              type="button"
+              class="store-btn"
+              aria-label="Google Play — coming soon"
+              data-soon-trigger
+            >
+              <!-- Simple Icons: Android robot glyph -->
+              <svg class="store-glyph" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                <path fill="currentColor" d="M18.4395 5.5586c-.675 1.1664-1.352 2.3318-2.0274 3.498-.0366-.0155-.0742-.0286-.1113-.043-1.8249-.6957-3.484-.8-4.42-.787-1.8551.0185-3.3544.4643-4.2597.8203-.084-.1494-1.7526-3.021-2.0215-3.4864a1.1451 1.1451 0 0 0-.1406-.1914c-.3312-.364-.9054-.4859-1.379-.203-.475.282-.7136.9361-.3886 1.5019 1.9466 3.3696-.0966-.2158 1.9473 3.3593.0172.031-.4946.2642-1.3926 1.0177C2.8987 12.176.452 14.772 0 18.9902h24c-.119-1.1108-.3686-2.099-.7461-3.0683-.7438-1.9118-1.8435-3.2928-2.7402-4.1836a12.1048 12.1048 0 0 0-2.1309-1.6875c.6594-1.122 1.312-2.2559 1.9649-3.3848.2077-.3615.1886-.7956-.0079-1.1191a1.1001 1.1001 0 0 0-.8515-.5332c-.5225-.0536-.9392.3128-1.0488.5449zm-.0391 8.461c.3944.5926.324 1.3306-.1563 1.6503-.4799.3197-1.188.0985-1.582-.4941-.3944-.5927-.324-1.3307.1563-1.6504.4727-.315 1.1812-.1086 1.582.4941zM7.207 13.5273c.4803.3197.5506 1.0577.1563 1.6504-.394.5926-1.1038.8138-1.584.4941-.48-.3197-.5503-1.0577-.1563-1.6504.4008-.6021 1.1087-.8106 1.584-.4941z"/>
+              </svg>
+              <span class="store-btn-text">
+                <span class="store-btn-sub">Soon on</span>
+                <span class="store-btn-name">Google Play</span>
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="store-btn"
+              aria-label="App Store — coming soon"
+              data-soon-trigger
+            >
+              <!-- Simple Icons: Apple logo glyph -->
+              <svg class="store-glyph" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                <path fill="currentColor" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/>
+              </svg>
+              <span class="store-btn-text">
+                <span class="store-btn-sub">Soon on</span>
+                <span class="store-btn-name">App Store</span>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Clay phone mockup + 4 floating clay objects -->
+        <div class="hero-stage" aria-label="CAMI mobile app preview">
+          <img src="assets/clay-bag.svg" alt="" class="float-obj float-bag" width="112" height="112" aria-hidden="true">
+          <img src="assets/clay-coin.svg" alt="" class="float-obj float-coin" width="98" height="98" aria-hidden="true">
+          <img src="assets/clay-tag.svg" alt="" class="float-obj float-tag" width="104" height="104" aria-hidden="true">
+          <img src="assets/clay-heart.svg" alt="" class="float-obj float-heart" width="92" height="92" aria-hidden="true">
+
+          <div class="phone-assembly">
+            <div class="phone-screen">
+              <div class="phone-status">
+                <span>9:41</span>
+                <span>TSU Campus</span>
+              </div>
+
+              <div class="phone-brand-card">
+                <span class="logo-housing logo-housing--phone">
+                  <img src="assets/cami-icon-192.png" srcset="assets/cami-icon-192.png 1x, assets/cami-icon-512.png 2x" alt="CAMI app icon" class="official-logo" width="54" height="54">
+                </span>
+                <div class="phone-app-meta">
+                  <p class="phone-app-title">CAMI</p>
+                  <p class="phone-app-sub">
+                    <svg class="ui-icon ui-icon--xs" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    <span>TSU verified</span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="phone-feed">
+                <div class="mini-listing">
+                  <img src="assets/cat-uniform.svg" alt="" class="mini-thumb" width="40" height="40" aria-hidden="true">
+                  <div class="mini-info">
+                    <p class="mini-title">PE uniform</p>
+                    <p class="mini-meta">Brand-new · Main</p>
+                  </div>
+                  <span class="mini-price">₱380</span>
+                </div>
+
+                <div class="mini-listing">
+                  <img src="assets/cat-coffee.svg" alt="" class="mini-thumb" width="40" height="40" aria-hidden="true">
+                  <div class="mini-info">
+                    <p class="mini-title">Iced coffee</p>
+                    <p class="mini-meta">Food &amp; Drinks · Main</p>
+                  </div>
+                  <span class="mini-price">₱65</span>
+                </div>
+
+                <div class="mini-listing">
+                  <img src="assets/cat-lanyard.svg" alt="" class="mini-thumb" width="40" height="40" aria-hidden="true">
+                  <div class="mini-info">
+                    <p class="mini-title">Crochet lanyard</p>
+                    <p class="mini-meta">Custom-made · Lucinda</p>
+                  </div>
+                  <span class="mini-price">₱120</span>
+                </div>
+              </div>
+
+              <div class="phone-tabbar" aria-hidden="true">
+                <span class="tab-item tab-item--active">
+                  <svg class="ui-icon ui-icon--sm" viewBox="0 0 24 24" width="16" height="16">
+                    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
+                    <path d="M3 6h18"/>
+                    <path d="M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
+                </span>
+                <span class="tab-item">
+                  <svg class="ui-icon ui-icon--sm" viewBox="0 0 24 24" width="16" height="16">
+                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                  </svg>
+                </span>
+                <span class="tab-item">
+                  <svg class="ui-icon ui-icon--sm" viewBox="0 0 24 24" width="16" height="16">
+                    <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
+                  </svg>
+                </span>
+                <span class="tab-item">
+                  <svg class="ui-icon ui-icon--sm" viewBox="0 0 24 24" width="16" height="16">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <img src="assets/clay-phone-frame.svg" alt="CAMI clay phone frame" class="phone-frame-svg" width="360" height="720">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Features glimpse (4 short one-line items) -->
+    <section id="features" class="section features-glimpse">
+      <div class="container glimpse-grid">
+        <div class="glimpse-intro">
+          <h2>Simple by design, made for TSU.</h2>
+          <p class="section-lead">
+            A quiet place for classmates to buy, sell, and share skills safely on campus without outside resellers.
+          </p>
+        </div>
+
+        <ul class="glimpse-list">
+          <li class="clay-pill-row">
+            <span class="icon-well" aria-hidden="true">
+              <svg class="ui-icon" viewBox="0 0 24 24" width="22" height="22">
+                <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+            </span>
+            <span class="glimpse-text">Verified TSU students only</span>
+          </li>
+
+          <li class="clay-pill-row">
+            <span class="icon-well" aria-hidden="true">
+              <svg class="ui-icon" viewBox="0 0 24 24" width="22" height="22">
+                <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
+              </svg>
+            </span>
+            <span class="glimpse-text">Chat and meet up on campus</span>
+          </li>
+
+          <li class="clay-pill-row">
+            <span class="icon-well" aria-hidden="true">
+              <svg class="ui-icon" viewBox="0 0 24 24" width="22" height="22">
+                <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/>
+                <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/>
+              </svg>
+            </span>
+            <span class="glimpse-text">Pay by Cash, GCash or Maya</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3. Categories bento (5 clay tiles, different sizes, one soft pastel each) -->
+    <section id="categories" class="section categories">
+      <div class="container">
+        <div class="section-head">
+          <h2>Five ways students trade on campus.</h2>
+          <p class="section-lead">
+            From sealed uniforms to handmade lanyards, everything sits in five clear categories.
+          </p>
+        </div>
+
+        <div class="bento-grid">
+          <article class="clay-tile bento-brandnew tile-peach">
+            <div class="bento-copy">
+              <h3>Brand-new</h3>
+              <p>Sealed PE uniforms, department shirts, and unused school kits.</p>
+            </div>
+            <img src="assets/cat-uniform.svg" alt="Clay uniform shirt illustration" class="bento-art bento-art--wide" width="128" height="128">
+          </article>
+
+          <article class="clay-tile bento-preloved tile-cream">
+            <div class="bento-copy">
+              <h3>Pre-loved</h3>
+              <p>Passed-down textbooks, calculators, and campus essentials.</p>
+            </div>
+            <img src="assets/cat-book.svg" alt="Clay textbook illustration" class="bento-art" width="116" height="116">
+          </article>
+
+          <article class="clay-tile bento-food tile-butter">
+            <img src="assets/cat-coffee.svg" alt="Clay iced coffee illustration" class="bento-art bento-art--top" width="108" height="108">
+            <div class="bento-copy">
+              <h3>Food &amp; Drinks</h3>
+              <p>Iced coffee, pastries, and campus snacks between classes.</p>
+            </div>
+          </article>
+
+          <article class="clay-tile bento-services tile-sage">
+            <img src="assets/cat-ruler.svg" alt="Clay drafting ruler and triangle illustration" class="bento-art bento-art--top" width="108" height="108">
+            <div class="bento-copy">
+              <h3>Student Services</h3>
+              <p>Drafting, design, and peer help arranged through chat.</p>
+            </div>
+          </article>
+
+          <article class="clay-tile bento-custom tile-blush">
+            <img src="assets/cat-lanyard.svg" alt="Clay crochet ID lanyard illustration" class="bento-art bento-art--top" width="108" height="108">
+            <div class="bento-copy">
+              <h3>Custom-made</h3>
+              <p>Crochet ID lanyards and handmade student crafts.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Campuses strip -->
+    <section id="campuses" class="section campuses">
+      <div class="container">
+        <div class="clay-tile tile-sage campus-strip">
+          <div class="campus-strip-head">
+            <span class="icon-well icon-well--strip" aria-hidden="true">
+              <svg class="ui-icon" viewBox="0 0 24 24" width="22" height="22">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
+            </span>
+            <div>
+              <h2>Across all three TSU campuses.</h2>
+              <p class="campus-strip-sub">Find listings near your building for easy handovers.</p>
+            </div>
+          </div>
+
+          <ul class="campus-pills" aria-label="Tarlac State University campuses">
+            <li class="campus-pill">
+              <svg class="ui-icon ui-icon--sm" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>Main</span>
+            </li>
+            <li class="campus-pill">
+              <svg class="ui-icon ui-icon--sm" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>Lucinda</span>
+            </li>
+            <li class="campus-pill">
+              <svg class="ui-icon ui-icon--sm" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>San Isidro</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Contact -->
+    <section id="contact" class="section contact">
+      <div class="container contact-grid">
+        <div class="contact-intro">
+          <h2>Get in touch with CAMI.</h2>
+          <p class="section-lead">
+            Questions, student seller interest, or campus feedback? Reach out anytime through email or our social pages.
+          </p>
+          <a href="mailto:camishop@gmail.com" class="btn-terracotta btn-contact">
+            <svg class="store-glyph" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path fill="currentColor" d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/>
+            </svg>
+            <span>Send us an email</span>
+          </a>
+        </div>
+
+        <ul class="contact-list" aria-label="CAMI contact channels">
+          <li>
+            <a href="mailto:camishop@gmail.com" class="clay-pill-row contact-link">
+              <span class="icon-well" aria-hidden="true">
+                <!-- Simple Icons: Gmail -->
+                <svg class="store-glyph" viewBox="0 0 24 24" width="22" height="22">
+                  <path fill="currentColor" d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/>
+                </svg>
+              </span>
+              <span class="contact-meta">
+                <span class="contact-label">Gmail</span>
+                <span class="contact-value">camishop@gmail.com</span>
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://facebook.com/cami" target="_blank" rel="noopener noreferrer" class="clay-pill-row contact-link">
+              <span class="icon-well" aria-hidden="true">
+                <!-- Simple Icons: Facebook -->
+                <svg class="store-glyph" viewBox="0 0 24 24" width="22" height="22">
+                  <path fill="currentColor" d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.5 9.101 11.647Z"/>
+                </svg>
+              </span>
+              <span class="contact-meta">
+                <span class="contact-label">Facebook</span>
+                <span class="contact-value">facebook.com/cami</span>
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://instagram.com/cami" target="_blank" rel="noopener noreferrer" class="clay-pill-row contact-link">
+              <span class="icon-well" aria-hidden="true">
+                <!-- Simple Icons: Instagram -->
+                <svg class="store-glyph" viewBox="0 0 24 24" width="22" height="22">
+                  <path fill="currentColor" d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                </svg>
+              </span>
+              <span class="contact-meta">
+                <span class="contact-label">Instagram</span>
+                <span class="contact-value">instagram.com/cami</span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- 5. Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="clay-tile tile-cream footer-card">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <span class="logo-housing logo-housing--footer">
+              <img src="assets/cami-icon-192.png" srcset="assets/cami-icon-192.png 1x, assets/cami-icon-512.png 2x" alt="CAMI logo" class="official-logo" width="48" height="48">
+            </span>
+            <div>
+              <p class="footer-name">CAMI</p>
+              <p class="footer-sub">Peer-to-peer student marketplace for Tarlac State University.</p>
+            </div>
+          </div>
+
+          <div class="footer-stores">
+            <button type="button" class="store-btn store-btn--compact" aria-label="Google Play — coming soon" data-soon-trigger>
+              <svg class="store-glyph" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                <path fill="currentColor" d="M18.4395 5.5586c-.675 1.1664-1.352 2.3318-2.0274 3.498-.0366-.0155-.0742-.0286-.1113-.043-1.8249-.6957-3.484-.8-4.42-.787-1.8551.0185-3.3544.4643-4.2597.8203-.084-.1494-1.7526-3.021-2.0215-3.4864a1.1451 1.1451 0 0 0-.1406-.1914c-.3312-.364-.9054-.4859-1.379-.203-.475.282-.7136.9361-.3886 1.5019 1.9466 3.3696-.0966-.2158 1.9473 3.3593.0172.031-.4946.2642-1.3926 1.0177C2.8987 12.176.452 14.772 0 18.9902h24c-.119-1.1108-.3686-2.099-.7461-3.0683-.7438-1.9118-1.8435-3.2928-2.7402-4.1836a12.1048 12.1048 0 0 0-2.1309-1.6875c.6594-1.122 1.312-2.2559 1.9649-3.3848.2077-.3615.1886-.7956-.0079-1.1191a1.1001 1.1001 0 0 0-.8515-.5332c-.5225-.0536-.9392.3128-1.0488.5449zm-.0391 8.461c.3944.5926.324 1.3306-.1563 1.6503-.4799.3197-1.188.0985-1.582-.4941-.3944-.5927-.324-1.3307.1563-1.6504.4727-.315 1.1812-.1086 1.582.4941zM7.207 13.5273c.4803.3197.5506 1.0577.1563 1.6504-.394.5926-1.1038.8138-1.584.4941-.48-.3197-.5503-1.0577-.1563-1.6504.4008-.6021 1.1087-.8106 1.584-.4941z"/>
+              </svg>
+              <span>Google Play</span>
+            </button>
+
+            <button type="button" class="store-btn store-btn--compact" aria-label="App Store — coming soon" data-soon-trigger>
+              <svg class="store-glyph" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                <path fill="currentColor" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/>
+              </svg>
+              <span>App Store</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="prototype-note">Prototype, not yet available.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- "Not available yet" Toast -->
+  <div
+    class="soon-toast"
+    id="soonToast"
+    role="dialog"
+    aria-modal="false"
+    aria-labelledby="toastText"
+    hidden
+  >
+    <div class="soon-toast-inner">
+      <span class="toast-icon" aria-hidden="true">
+        <svg class="ui-icon" viewBox="0 0 24 24" width="20" height="20">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+          <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+        </svg>
+      </span>
+      <p class="toast-message" id="toastText">
+        CAMI isn't available yet. We're still building it for TSU students.
+      </p>
+      <button type="button" class="toast-close" id="toastClose" aria-label="Close notice">
+        <svg class="ui-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

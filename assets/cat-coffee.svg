@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" fill="none" role="img" aria-label="Clay iced coffee cup">
+  <defs>
+    <filter id="drop" x="-22%" y="-18%" width="144%" height="146%">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#3B241B" flood-opacity="0.16"/>
+    </filter>
+    <filter id="clay" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3.5" result="b1"/>
+      <feOffset dx="3.5" dy="4" in="b1" result="o1"/>
+      <feComposite in="SourceAlpha" in2="o1" operator="out" result="i1"/>
+      <feFlood flood-color="#FFF7EC" flood-opacity="0.65" result="c1"/>
+      <feComposite in="c1" in2="i1" operator="in" result="hi"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="b2"/>
+      <feOffset dx="-4" dy="-5" in="b2" result="o2"/>
+      <feComposite in="SourceAlpha" in2="o2" operator="out" result="i2"/>
+      <feFlood flood-color="#3B241B" flood-opacity="0.17" result="c2"/>
+      <feComposite in="c2" in2="i2" operator="in" result="sh"/>
+      <feMerge>
+        <feMergeNode in="SourceGraphic"/>
+        <feMergeNode in="hi"/>
+        <feMergeNode in="sh"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="coffeeCup" cx="30%" cy="28%" r="85%">
+      <stop offset="0%" stop-color="#D7A77E"/>
+      <stop offset="52%" stop-color="#A66B44"/>
+      <stop offset="100%" stop-color="#6B3E26"/>
+    </radialGradient>
+    <radialGradient id="milkSwirl" cx="32%" cy="22%" r="80%">
+      <stop offset="0%" stop-color="#FFFDF8"/>
+      <stop offset="60%" stop-color="#F6E4C8"/>
+      <stop offset="100%" stop-color="#DFC198"/>
+    </radialGradient>
+    <radialGradient id="lidGrad" cx="32%" cy="22%" r="82%">
+      <stop offset="0%" stop-color="#FFFBF4"/>
+      <stop offset="58%" stop-color="#EBD3AE"/>
+      <stop offset="100%" stop-color="#D3B082"/>
+    </radialGradient>
+    <radialGradient id="strawGrad" cx="30%" cy="25%" r="80%">
+      <stop offset="0%" stop-color="#E77C59"/>
+      <stop offset="58%" stop-color="#B84A28"/>
+      <stop offset="100%" stop-color="#96391C"/>
+    </radialGradient>
+    <filter id="softBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#drop)">
+    <!-- Chunky terracotta straw -->
+    <path filter="url(#clay)" d="M101 22 L92 66" stroke="url(#strawGrad)" stroke-width="12" stroke-linecap="round"/>
+
+    <!-- Domed clay lid -->
+    <path filter="url(#clay)" d="M51 74 C51 48, 69 36, 90 36 C111 36, 129 48, 129 74 Z" fill="url(#lidGrad)"/>
+
+    <!-- Plump iced coffee cup body -->
+    <path filter="url(#clay)" d="M48 76 L132 76 L122 146 C121 154, 114 159, 106 159 L74 159 C66 159, 59 154, 58 146 Z" fill="url(#coffeeCup)"/>
+
+    <!-- Creamy milk foam wave near bottom/mid -->
+    <path filter="url(#clay)" d="M54 114 C67 108, 79 122, 92 115 C104 109, 116 119, 127 113 L122 146 C121 154, 114 159, 106 159 L74 159 C66 159, 59 154, 58 146 Z" fill="url(#milkSwirl)"/>
+
+    <!-- Tiny clay ice cubes inside -->
+    <rect filter="url(#clay)" x="66" y="88" width="17" height="17" rx="5.5" transform="rotate(-12 74 96)" fill="#FBF3E6" opacity="0.88"/>
+    <rect filter="url(#clay)" x="94" y="86" width="16" height="16" rx="5" transform="rotate(14 102 94)" fill="#FBF3E6" opacity="0.85"/>
+
+    <!-- Thick rounded cup rim -->
+    <rect filter="url(#clay)" x="43" y="67" width="94" height="15" rx="7.5" fill="url(#lidGrad)"/>
+
+    <!-- Cute clay cup sleeve dot -->
+    <circle filter="url(#clay)" cx="90" cy="134" r="10" fill="url(#strawGrad)"/>
+
+    <!-- Soft dome sheen -->
+    <ellipse cx="74" cy="52" rx="11" ry="6" transform="rotate(-24 74 52)" fill="#FFF7EC" opacity="0.52" filter="url(#softBlur)"/>
+  </g>
+</svg>

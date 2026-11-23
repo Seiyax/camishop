@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" fill="none" role="img" aria-label="Clay peso coin">
+  <defs>
+    <filter id="drop" x="-25%" y="-20%" width="150%" height="155%">
+      <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#3B241B" flood-opacity="0.17"/>
+    </filter>
+    <filter id="clay" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur1"/>
+      <feOffset dx="4" dy="5" in="blur1" result="off1"/>
+      <feComposite in="SourceAlpha" in2="off1" operator="out" result="inv1"/>
+      <feFlood flood-color="#FFFDF5" flood-opacity="0.72" result="col1"/>
+      <feComposite in="col1" in2="inv1" operator="in" result="hi"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="blur2"/>
+      <feOffset dx="-5" dy="-5" in="blur2" result="off2"/>
+      <feComposite in="SourceAlpha" in2="off2" operator="out" result="inv2"/>
+      <feFlood flood-color="#6B441C" flood-opacity="0.18" result="col2"/>
+      <feComposite in="col2" in2="inv2" operator="in" result="sh"/>
+      <feMerge>
+        <feMergeNode in="SourceGraphic"/>
+        <feMergeNode in="hi"/>
+        <feMergeNode in="sh"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="coinRim" cx="30%" cy="22%" r="82%">
+      <stop offset="0%" stop-color="#FFF3BD"/>
+      <stop offset="52%" stop-color="#F5E0A0"/>
+      <stop offset="100%" stop-color="#E1B557"/>
+    </radialGradient>
+    <radialGradient id="coinDish" cx="68%" cy="72%" r="80%">
+      <stop offset="0%" stop-color="#FFEEB4"/>
+      <stop offset="58%" stop-color="#F6D57C"/>
+      <stop offset="100%" stop-color="#D9A84B"/>
+    </radialGradient>
+    <radialGradient id="pesoClay" cx="32%" cy="25%" r="80%">
+      <stop offset="0%" stop-color="#764C3C"/>
+      <stop offset="55%" stop-color="#3B241B"/>
+      <stop offset="100%" stop-color="#301A12"/>
+    </radialGradient>
+    <filter id="softBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#drop)" transform="rotate(-8 90 90)">
+    <!-- Slight 3D coin thickness rim -->
+    <circle cx="94" cy="95" r="59" fill="#CFA149"/>
+
+    <!-- Outer plump clay coin face -->
+    <circle filter="url(#clay)" cx="90" cy="90" r="59" fill="url(#coinRim)"/>
+
+    <!-- Recessed inner coin dish -->
+    <circle cx="90" cy="90" r="45" fill="url(#coinDish)"/>
+    <circle cx="90" cy="90" r="45" stroke="#FFF9E3" stroke-opacity="0.55" stroke-width="2.5" fill="none"/>
+
+    <!-- Soft shadow under embossed peso sign -->
+    <g transform="translate(2, 4)" opacity="0.22" filter="url(#softBlur)">
+      <path d="M74 123 L74 60 L98 60 C112 60, 120 68, 120 79 C120 90, 112 98, 98 98 L74 98" stroke="#3B241B" stroke-width="11.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <line x1="58" y1="73" x2="128" y2="73" stroke="#3B241B" stroke-width="7.5" stroke-linecap="round"/>
+      <line x1="58" y1="87" x2="128" y2="87" stroke="#3B241B" stroke-width="7.5" stroke-linecap="round"/>
+    </g>
+
+    <!-- Sculpted 3D clay Peso symbol (₱) -->
+    <g filter="url(#clay)">
+      <path d="M74 123 L74 60 L98 60 C112 60, 120 68, 120 79 C120 90, 112 98, 98 98 L74 98" stroke="url(#pesoClay)" stroke-width="11.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <line x1="58" y1="73" x2="128" y2="73" stroke="url(#pesoClay)" stroke-width="7.5" stroke-linecap="round"/>
+      <line x1="58" y1="87" x2="128" y2="87" stroke="url(#pesoClay)" stroke-width="7.5" stroke-linecap="round"/>
+    </g>
+
+    <!-- Top-left satin sheen -->
+    <ellipse cx="63" cy="54" rx="18" ry="8" transform="rotate(-34 63 54)" fill="#FFF7EC" opacity="0.48" filter="url(#softBlur)"/>
+  </g>
+</svg>

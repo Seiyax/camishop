@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" fill="none" role="img" aria-label="Clay pre-loved textbook">
+  <defs>
+    <filter id="drop" x="-22%" y="-18%" width="144%" height="146%">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#3B241B" flood-opacity="0.16"/>
+    </filter>
+    <filter id="clay" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3.5" result="b1"/>
+      <feOffset dx="3.5" dy="4" in="b1" result="o1"/>
+      <feComposite in="SourceAlpha" in2="o1" operator="out" result="i1"/>
+      <feFlood flood-color="#FFF7EC" flood-opacity="0.62" result="c1"/>
+      <feComposite in="c1" in2="i1" operator="in" result="hi"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="b2"/>
+      <feOffset dx="-4" dy="-5" in="b2" result="o2"/>
+      <feComposite in="SourceAlpha" in2="o2" operator="out" result="i2"/>
+      <feFlood flood-color="#3B241B" flood-opacity="0.18" result="c2"/>
+      <feComposite in="c2" in2="i2" operator="in" result="sh"/>
+      <feMerge>
+        <feMergeNode in="SourceGraphic"/>
+        <feMergeNode in="hi"/>
+        <feMergeNode in="sh"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="coverTerra" cx="28%" cy="22%" r="85%">
+      <stop offset="0%" stop-color="#E57D5A"/>
+      <stop offset="55%" stop-color="#B84A28"/>
+      <stop offset="100%" stop-color="#96391C"/>
+    </radialGradient>
+    <radialGradient id="spineDark" cx="35%" cy="25%" r="80%">
+      <stop offset="0%" stop-color="#764C3C"/>
+      <stop offset="58%" stop-color="#3B241B"/>
+      <stop offset="100%" stop-color="#2D1710"/>
+    </radialGradient>
+    <linearGradient id="pagesGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFDF8"/>
+      <stop offset="100%" stop-color="#EAD2AF"/>
+    </linearGradient>
+    <radialGradient id="ribbonGrad" cx="30%" cy="25%" r="80%">
+      <stop offset="0%" stop-color="#FFF2BC"/>
+      <stop offset="60%" stop-color="#F5E0A0"/>
+      <stop offset="100%" stop-color="#D9AE4E"/>
+    </radialGradient>
+    <filter id="softBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#drop)" transform="rotate(-6 90 92)">
+    <!-- Back cover -->
+    <rect x="40" y="42" width="106" height="114" rx="18" fill="#8C3419"/>
+
+    <!-- Thick clay page block -->
+    <rect filter="url(#clay)" x="44" y="34" width="100" height="116" rx="15" fill="url(#pagesGrad)"/>
+    <!-- Subtle page lines -->
+    <line x1="56" y1="142" x2="132" y2="142" stroke="#D5B890" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- Front plump book cover -->
+    <rect filter="url(#clay)" x="36" y="28" width="102" height="114" rx="18" fill="url(#coverTerra)"/>
+
+    <!-- Rounded cocoa clay book spine -->
+    <path filter="url(#clay)" d="M36 46 C36 36, 44 28, 54 28 L61 28 L61 142 L54 142 C44 142, 36 134, 36 124 Z" fill="url(#spineDark)"/>
+
+    <!-- Embossed cream clay label on front cover -->
+    <rect x="75" y="54" width="46" height="32" rx="10" fill="#3B241B" opacity="0.16" filter="url(#softBlur)" transform="translate(2,3)"/>
+    <rect filter="url(#clay)" x="74" y="52" width="46" height="32" rx="10" fill="#FBF3E6"/>
+    <rect x="83" y="62" width="28" height="5" rx="2.5" fill="#B84A28" opacity="0.75"/>
+    <rect x="87" y="72" width="20" height="4.5" rx="2.25" fill="#6F5A4C" opacity="0.7"/>
+
+    <!-- Hanging clay bookmark ribbon -->
+    <path filter="url(#clay)" d="M105 138 L123 138 L123 163 C123 166, 119 167, 117 165 L114 161 L111 165 C109 167, 105 166, 105 163 Z" fill="url(#ribbonGrad)"/>
+
+    <!-- Soft satin sheen -->
+    <ellipse cx="78" cy="43" rx="18" ry="6" fill="#FFF7EC" opacity="0.32" filter="url(#softBlur)"/>
+  </g>
+</svg>

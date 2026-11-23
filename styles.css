@@ -1,0 +1,1183 @@
+/* =========================================================
+   CAMI — Tarlac State University Student Marketplace
+   Calm, Eye-Comfortable 3D Clay Design System
+   ========================================================= */
+
+:root {
+  /* Eye-comfortable warm palette (zero pure white, zero pure black) */
+  --milk: #FBF3E6;
+  --cream-light: #FFF7EC;
+  --cocoa: #3B241B;
+  --muted: #6F5A4C;
+
+  /* Terracotta accent */
+  --terracotta: #B84A28;
+  --terracotta-hover: #9C3D20;
+
+  /* Soft desaturated clay tile pastels */
+  --peach: #F6CDB0;
+  --camel: #EBD3AE;
+  --butter: #F5E0A0;
+  --sage: #B5CFAE;
+  --blush: #EDB5A8;
+
+  /* Soft clay shadows (warm cocoa only) */
+  --clay-shadow:
+    inset 5px 5px 12px rgba(255, 255, 255, 0.45),
+    inset -5px -5px 12px rgba(59, 36, 27, 0.10),
+    0 14px 28px -10px rgba(59, 36, 27, 0.16);
+
+  --clay-shadow-soft:
+    inset 3px 3px 8px rgba(255, 255, 255, 0.45),
+    inset -3px -3px 8px rgba(59, 36, 27, 0.10),
+    0 8px 18px -8px rgba(59, 36, 27, 0.16);
+
+  --clay-btn-shadow:
+    inset 3px 3px 8px rgba(255, 255, 255, 0.25),
+    inset -3px -3px 8px rgba(59, 36, 27, 0.22),
+    0 10px 20px -8px rgba(59, 36, 27, 0.18);
+
+  --radius-tile: 32px;
+  --radius-lg: 38px;
+  --radius-pill: 999px;
+  --container: 1080px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Manrope", system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  font-size: clamp(1.0625rem, 1.05vw, 1.125rem); /* 17px–18px */
+  line-height: 1.6;
+  color: var(--cocoa);
+  background-color: var(--milk);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3, p, ul {
+  margin: 0;
+}
+
+h1, h2, h3 {
+  font-weight: 800;
+  color: var(--cocoa);
+  letter-spacing: -0.025em;
+  line-height: 1.14;
+}
+
+p {
+  max-width: 70ch;
+}
+
+/* Visible 3px cocoa keyboard focus ring with offset */
+:focus-visible {
+  outline: 3px solid var(--cocoa);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 12px;
+  background-color: var(--cocoa);
+  color: var(--cream-light);
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  z-index: 120;
+}
+
+.skip-link:focus {
+  left: 16px;
+}
+
+.container {
+  width: min(100% - 32px, var(--container));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: 56px;
+}
+
+.section-head {
+  max-width: 60ch;
+  margin-bottom: 32px;
+}
+
+.section-head h2,
+.glimpse-intro h2 {
+  font-size: clamp(1.75rem, 3.2vw, 2.4rem);
+  margin-bottom: 12px;
+}
+
+.section-lead {
+  color: var(--muted);
+  font-weight: 500;
+  max-width: 58ch;
+}
+
+/* =========================================================
+   Unified Lucide-style 2px Rounded Inline Icons
+   ========================================================= */
+
+.ui-icon {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+  display: block;
+}
+
+.ui-icon--sm {
+  width: 18px;
+  height: 18px;
+}
+
+.ui-icon--xs {
+  width: 14px;
+  height: 14px;
+}
+
+.store-glyph {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  display: block;
+}
+
+/* =========================================================
+   Official Logo Housing (exact asset, zero distortion/recolor)
+   ========================================================= */
+
+.official-logo {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  display: block;
+}
+
+.logo-housing {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  filter: drop-shadow(0 6px 12px rgba(59, 36, 27, 0.16));
+}
+
+.logo-housing--nav {
+  width: 44px;
+  height: 44px;
+}
+
+.logo-housing--phone {
+  width: 54px;
+  height: 54px;
+}
+
+.logo-housing--footer {
+  width: 48px;
+  height: 48px;
+}
+
+/* =========================================================
+   Clay Tiles & Buttons
+   ========================================================= */
+
+.clay-tile {
+  border-radius: var(--radius-tile);
+  box-shadow: var(--clay-shadow);
+  padding: 28px;
+  color: var(--cocoa);
+}
+
+.tile-peach { background-color: var(--peach); }
+.tile-cream { background-color: var(--camel); }
+.tile-butter { background-color: var(--butter); }
+.tile-sage { background-color: var(--sage); }
+.tile-blush { background-color: var(--blush); }
+
+.btn-terracotta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background-color: var(--terracotta);
+  color: var(--cream-light);
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--clay-btn-shadow);
+  transition: background-color 140ms ease;
+}
+
+.btn-terracotta:hover {
+  background-color: var(--terracotta-hover);
+}
+
+.btn-nav {
+  display: none;
+  min-height: 44px;
+  padding: 10px 20px;
+  font-size: 0.94rem;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   Header
+   ========================================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background-color: rgba(251, 243, 230, 0.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(59, 36, 27, 0.08);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 14px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-size: 1.125rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--cocoa);
+}
+
+.brand-sub {
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.site-nav {
+  display: none;
+  align-items: center;
+  gap: 28px;
+}
+
+.site-nav a {
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: var(--cocoa);
+  padding: 6px 2px;
+}
+
+.site-nav a:hover {
+  color: var(--terracotta);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-toggle {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 0;
+  background-color: var(--camel);
+  color: var(--cocoa);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--clay-shadow-soft);
+}
+
+.menu-toggle .icon-close {
+  display: none;
+}
+
+.menu-toggle[aria-expanded="true"] .icon-menu {
+  display: none;
+}
+
+.menu-toggle[aria-expanded="true"] .icon-close {
+  display: block;
+}
+
+.mobile-nav {
+  border-top: 1px solid rgba(59, 36, 27, 0.08);
+  background-color: var(--milk);
+}
+
+.mobile-nav[hidden] {
+  display: none;
+}
+
+.mobile-nav-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-block: 14px;
+}
+
+.mobile-nav-inner a {
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-weight: 600;
+  color: var(--cocoa);
+}
+
+.mobile-nav-inner a:hover {
+  background-color: var(--camel);
+}
+
+/* =========================================================
+   1. Hero
+   ========================================================= */
+
+.hero {
+  padding-top: 36px;
+  padding-bottom: 64px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 44px;
+  align-items: center;
+}
+
+.hero-copy h1 {
+  font-size: clamp(2.15rem, 4.8vw, 3.35rem);
+  line-height: 1.09;
+  margin-bottom: 18px;
+}
+
+.hero-sub {
+  color: var(--muted);
+  font-weight: 500;
+  max-width: 52ch;
+  margin-bottom: 24px;
+}
+
+/* Coming soon badge near buttons */
+.soon-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.coming-soon-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 15px;
+  border-radius: var(--radius-pill);
+  background-color: var(--terracotta);
+  color: var(--cream-light);
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: var(--clay-btn-shadow);
+}
+
+.soon-caption {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+/* Disabled-looking, focusable Store Buttons (Google Play & App Store) */
+.store-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.store-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 58px;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  border: 1.5px dashed rgba(59, 36, 27, 0.34);
+  background-color: var(--camel);
+  color: var(--cocoa);
+  cursor: pointer;
+  text-align: left;
+  box-shadow:
+    inset 3px 3px 7px rgba(255, 255, 255, 0.4),
+    inset -3px -3px 7px rgba(59, 36, 27, 0.08);
+  transition: background-color 140ms ease, border-color 140ms ease;
+}
+
+.store-btn:hover {
+  background-color: #E3C69A;
+  border-color: rgba(59, 36, 27, 0.5);
+}
+
+.store-btn-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.store-btn-sub {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--cocoa);
+}
+
+.store-btn-name {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--cocoa);
+}
+
+.store-btn--compact {
+  min-height: 48px;
+  padding: 10px 18px;
+  font-size: 0.94rem;
+  font-weight: 700;
+  background-color: var(--milk);
+}
+
+.store-btn--compact:hover {
+  background-color: var(--cream-light);
+}
+
+/* Hero Clay Phone & Floating Objects */
+.hero-stage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 12px;
+  min-height: 490px;
+}
+
+.phone-assembly {
+  position: relative;
+  width: min(272px, 76vw);
+  aspect-ratio: 360 / 720;
+  z-index: 2;
+  filter: drop-shadow(0 20px 24px rgba(59, 36, 27, 0.16));
+}
+
+.phone-frame-svg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.phone-screen {
+  position: absolute;
+  top: 4.8%;
+  left: 8.4%;
+  right: 8.4%;
+  bottom: 4.8%;
+  background-color: var(--milk);
+  border-radius: 36px;
+  padding: 36px 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.phone-status {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--muted);
+  padding-inline: 6px;
+}
+
+.phone-brand-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--cream-light);
+  border-radius: 22px;
+  padding: 10px 12px;
+  box-shadow: var(--clay-shadow-soft);
+}
+
+.phone-app-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--cocoa);
+}
+
+.phone-app-sub {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+.phone-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.mini-listing {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--cream-light);
+  border-radius: 18px;
+  padding: 9px 11px;
+  box-shadow: var(--clay-shadow-soft);
+}
+
+.mini-thumb {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+}
+
+.mini-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.mini-title {
+  font-size: 0.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--cocoa);
+}
+
+.mini-meta {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.mini-price {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--terracotta);
+  flex-shrink: 0;
+}
+
+.phone-tabbar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  background-color: var(--camel);
+  padding: 6px;
+  border-radius: 18px;
+  box-shadow:
+    inset 2px 2px 6px rgba(255, 255, 255, 0.45),
+    inset -2px -2px 6px rgba(59, 36, 27, 0.10);
+}
+
+.tab-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 4px;
+  border-radius: 12px;
+  color: var(--cocoa);
+}
+
+.tab-item--active {
+  background-color: var(--terracotta);
+  color: var(--cream-light);
+}
+
+/* Floating Hero Clay Objects — ONLY hero objects & toast animate */
+.float-obj {
+  position: absolute;
+  z-index: 4;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.float-bag {
+  width: 72px;
+  top: 12px;
+  left: 4px;
+  animation: heroFloatA 6.4s ease-in-out infinite;
+}
+
+.float-coin {
+  width: 66px;
+  top: 52px;
+  right: 4px;
+  animation: heroFloatB 5.6s ease-in-out infinite;
+}
+
+.float-tag {
+  width: 70px;
+  bottom: 58px;
+  left: 4px;
+  animation: heroFloatB 6.8s ease-in-out infinite;
+}
+
+.float-heart {
+  width: 64px;
+  bottom: 24px;
+  right: 6px;
+  animation: heroFloatA 5.8s ease-in-out infinite;
+}
+
+@keyframes heroFloatA {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2.5deg); }
+}
+
+@keyframes heroFloatB {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(-2.5deg); }
+}
+
+/* =========================================================
+   2. Features Glimpse (max 3 colors: milk, camel, cocoa)
+   ========================================================= */
+
+.glimpse-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.glimpse-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.clay-pill-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 22px 14px 14px;
+  border-radius: 28px;
+  background-color: var(--camel);
+  color: var(--cocoa);
+  box-shadow: var(--clay-shadow);
+}
+
+.icon-well {
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+  background-color: var(--milk);
+  color: var(--cocoa);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: var(--clay-shadow-soft);
+}
+
+.glimpse-text {
+  font-weight: 700;
+  color: var(--cocoa);
+}
+
+/* =========================================================
+   3. Categories Bento (asymmetric tiles, cocoa text only)
+   ========================================================= */
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.bento-grid .clay-tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+  border-radius: var(--radius-lg);
+}
+
+.bento-copy h3 {
+  font-size: 1.32rem;
+  margin-bottom: 6px;
+  color: var(--cocoa);
+}
+
+.bento-copy p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--cocoa);
+}
+
+.bento-art {
+  width: 108px;
+  height: 108px;
+  align-self: flex-end;
+  flex-shrink: 0;
+}
+
+.bento-art--top {
+  align-self: flex-start;
+  width: 100px;
+  height: 100px;
+}
+
+/* =========================================================
+   4. Campuses Strip (max 3 colors: milk, sage, cocoa)
+   ========================================================= */
+
+.campus-strip {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border-radius: var(--radius-lg);
+  padding: 28px;
+}
+
+.campus-strip-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.campus-strip-head h2 {
+  font-size: clamp(1.45rem, 2.6vw, 1.9rem);
+  margin-bottom: 4px;
+  color: var(--cocoa);
+}
+
+.campus-strip-sub {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--cocoa);
+}
+
+.campus-pills {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.campus-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border-radius: var(--radius-pill);
+  background-color: var(--milk);
+  color: var(--cocoa);
+  font-weight: 700;
+  box-shadow: var(--clay-shadow-soft);
+}
+
+/* =========================================================
+   5. Contact (max 3 colors: milk, camel, cocoa + terracotta CTA)
+   ========================================================= */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.contact-intro h2 {
+  font-size: clamp(1.75rem, 3.2vw, 2.4rem);
+  margin-bottom: 12px;
+}
+
+.btn-contact {
+  margin-top: 22px;
+  min-height: 52px;
+  padding: 12px 24px;
+  font-size: 0.98rem;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-link {
+  transition: background-color 140ms ease;
+}
+
+.contact-link:hover {
+  background-color: #E3C69A;
+}
+
+.contact-meta {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+  min-width: 0;
+}
+
+.contact-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--cocoa);
+}
+
+.contact-value {
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: var(--cocoa);
+  word-break: break-word;
+}
+
+/* =========================================================
+   6. Footer (max 3 colors: milk, camel, cocoa)
+   ========================================================= */
+
+.site-footer {
+  padding-top: 16px;
+  padding-bottom: 48px;
+}
+
+.footer-card {
+  border-radius: var(--radius-lg);
+  padding: 30px;
+}
+
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgba(59, 36, 27, 0.14);
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--cocoa);
+}
+
+.footer-sub {
+  font-size: 0.96rem;
+  font-weight: 500;
+  color: var(--cocoa);
+  margin-top: 2px;
+}
+
+.footer-stores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-bottom {
+  padding-top: 16px;
+}
+
+.prototype-note {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--cocoa);
+}
+
+/* =========================================================
+   "Not available yet" Toast (only animated UI aside from hero)
+   ========================================================= */
+
+.soon-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translate(-50%, 16px);
+  width: min(calc(100% - 32px), 520px);
+  z-index: 100;
+  opacity: 0;
+  transition: opacity 200ms ease, transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.soon-toast.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.soon-toast[hidden] {
+  display: none;
+}
+
+.soon-toast-inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 16px 16px 18px;
+  border-radius: 28px;
+  background-color: var(--cocoa);
+  color: var(--cream-light);
+  box-shadow:
+    inset 3px 3px 8px rgba(255, 255, 255, 0.12),
+    0 18px 34px -8px rgba(59, 36, 27, 0.34);
+}
+
+.toast-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  background-color: var(--terracotta);
+  color: var(--cream-light);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.toast-message {
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--cream-light);
+  flex: 1;
+}
+
+.toast-close {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 0;
+  background-color: rgba(255, 247, 236, 0.14);
+  color: var(--cream-light);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.toast-close:hover {
+  background-color: rgba(255, 247, 236, 0.24);
+}
+
+.toast-close:focus-visible {
+  outline: 3px solid var(--cream-light);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   Responsive Breakpoints (Mobile-first)
+   ========================================================= */
+
+@media (min-width: 720px) {
+  .container {
+    width: min(100% - 48px, var(--container));
+  }
+
+  .section {
+    padding-block: 74px;
+  }
+
+  .site-nav {
+    display: flex;
+  }
+
+  .menu-toggle,
+  .mobile-nav {
+    display: none !important;
+  }
+
+  .hero {
+    padding-top: 48px;
+    padding-bottom: 72px;
+  }
+
+  .hero-stage {
+    min-height: 570px;
+  }
+
+  .phone-assembly {
+    width: 308px;
+  }
+
+  .float-bag {
+    width: 108px;
+    top: 24px;
+    left: 20px;
+  }
+
+  .float-coin {
+    width: 94px;
+    top: 66px;
+    right: 24px;
+  }
+
+  .float-tag {
+    width: 102px;
+    bottom: 76px;
+    left: 14px;
+  }
+
+  .float-heart {
+    width: 88px;
+    bottom: 36px;
+    right: 26px;
+  }
+
+  .btn-nav {
+    display: inline-flex;
+  }
+
+  .brand-sub {
+    font-size: 0.82rem;
+  }
+
+  /* Asymmetric 5-tile Bento Grid */
+  .bento-grid {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 22px;
+  }
+
+  .bento-grid .bento-brandnew {
+    grid-column: span 7;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .bento-grid .bento-preloved {
+    grid-column: span 5;
+  }
+
+  .bento-grid .bento-food {
+    grid-column: span 4;
+  }
+
+  .bento-grid .bento-services {
+    grid-column: span 4;
+  }
+
+  .bento-grid .bento-custom {
+    grid-column: span 4;
+  }
+
+  .bento-art--wide {
+    width: 132px;
+    height: 132px;
+    align-self: center;
+  }
+
+  .campus-strip {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 36px;
+  }
+
+  .footer-top {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 960px) {
+  .hero-grid {
+    grid-template-columns: 1.08fr 0.92fr;
+    gap: 36px;
+  }
+
+  .float-bag { left: -16px; }
+  .float-coin { right: -12px; }
+  .float-tag { left: -20px; }
+  .float-heart { right: -6px; }
+
+  .glimpse-grid,
+  .contact-grid {
+    grid-template-columns: 0.92fr 1.08fr;
+    gap: 48px;
+  }
+}
+
+/* =========================================================
+   Reduced Motion Preference
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .float-obj {
+    animation: none !important;
+  }
+
+  .soon-toast,
+  .btn-terracotta,
+  .store-btn {
+    transition: none !important;
+  }
+}

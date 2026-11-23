@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" fill="none" role="img" aria-label="Clay crochet ID lanyard">
+  <defs>
+    <filter id="drop" x="-22%" y="-18%" width="144%" height="146%">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#3B241B" flood-opacity="0.16"/>
+    </filter>
+    <filter id="clay" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3.5" result="b1"/>
+      <feOffset dx="3.5" dy="4" in="b1" result="o1"/>
+      <feComposite in="SourceAlpha" in2="o1" operator="out" result="i1"/>
+      <feFlood flood-color="#FFF7EC" flood-opacity="0.68" result="c1"/>
+      <feComposite in="c1" in2="i1" operator="in" result="hi"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="b2"/>
+      <feOffset dx="-4" dy="-5" in="b2" result="o2"/>
+      <feComposite in="SourceAlpha" in2="o2" operator="out" result="i2"/>
+      <feFlood flood-color="#3B241B" flood-opacity="0.17" result="c2"/>
+      <feComposite in="c2" in2="i2" operator="in" result="sh"/>
+      <feMerge>
+        <feMergeNode in="SourceGraphic"/>
+        <feMergeNode in="hi"/>
+        <feMergeNode in="sh"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="yarnTerra" cx="30%" cy="22%" r="85%">
+      <stop offset="0%" stop-color="#E67D5A"/>
+      <stop offset="56%" stop-color="#B84A28"/>
+      <stop offset="100%" stop-color="#96391C"/>
+    </radialGradient>
+    <radialGradient id="yarnButter" cx="30%" cy="25%" r="80%">
+      <stop offset="0%" stop-color="#FFF4C2"/>
+      <stop offset="58%" stop-color="#F5E0A0"/>
+      <stop offset="100%" stop-color="#D9AE4E"/>
+    </radialGradient>
+    <radialGradient id="cardCream" cx="28%" cy="22%" r="85%">
+      <stop offset="0%" stop-color="#FFFDF8"/>
+      <stop offset="58%" stop-color="#FFF3DF"/>
+      <stop offset="100%" stop-color="#DFC49F"/>
+    </radialGradient>
+    <radialGradient id="claspCocoa" cx="32%" cy="24%" r="82%">
+      <stop offset="0%" stop-color="#764C3C"/>
+      <stop offset="58%" stop-color="#3B241B"/>
+      <stop offset="100%" stop-color="#2D1710"/>
+    </radialGradient>
+    <filter id="softBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#drop)">
+    <!-- Braided crochet lanyard loop (beaded clay puffs) -->
+    <g filter="url(#clay)">
+      <path d="M90 88 C62 72, 54 44, 68 30 C80 18, 100 18, 112 30 C126 44, 118 72, 90 88 Z" stroke="url(#yarnTerra)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+    <!-- Cute crochet flower puff knots along the strap -->
+    <circle filter="url(#clay)" cx="66" cy="48" r="8" fill="url(#yarnButter)"/>
+    <circle filter="url(#clay)" cx="114" cy="48" r="8" fill="url(#yarnButter)"/>
+    <circle filter="url(#clay)" cx="90" cy="24" r="8.5" fill="url(#yarnButter)"/>
+
+    <!-- Plump cocoa clay clasp -->
+    <rect filter="url(#clay)" x="81" y="79" width="18" height="22" rx="9" fill="url(#claspCocoa)"/>
+
+    <!-- Rounded TSU Student ID card holder -->
+    <rect filter="url(#clay)" x="48" y="96" width="84" height="58" rx="16" fill="url(#cardCream)"/>
+    <!-- Top slot -->
+    <rect x="78" y="103" width="24" height="5.5" rx="2.75" fill="#B84A28" opacity="0.45"/>
+
+    <!-- Cute clay avatar circle on ID card -->
+    <circle filter="url(#clay)" cx="70" cy="128" r="12" fill="url(#yarnTerra)"/>
+    <circle cx="70" cy="125" r="4.5" fill="#FBF3E6"/>
+    <path d="M62 135 C64 131, 76 131, 78 135" stroke="#FBF3E6" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+
+    <!-- ID text bars -->
+    <rect x="90" y="120" width="29" height="6" rx="3" fill="#3B241B" opacity="0.8"/>
+    <rect x="90" y="131" width="21" height="5" rx="2.5" fill="#6F5A4C" opacity="0.75"/>
+  </g>
+</svg>

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" fill="none" role="img" aria-label="Clay drafting ruler and triangle">
+  <defs>
+    <filter id="drop" x="-22%" y="-18%" width="144%" height="146%">
+      <feDropShadow dx="0" dy="9" stdDeviation="7" flood-color="#3B241B" flood-opacity="0.18"/>
+    </filter>
+    <filter id="clay" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3.2" result="b1"/>
+      <feOffset dx="3" dy="3.5" in="b1" result="o1"/>
+      <feComposite in="SourceAlpha" in2="o1" operator="out" result="i1"/>
+      <feFlood flood-color="#FFF7EC" flood-opacity="0.58" result="c1"/>
+      <feComposite in="c1" in2="i1" operator="in" result="hi"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3.8" result="b2"/>
+      <feOffset dx="-3.5" dy="-4.5" in="b2" result="o2"/>
+      <feComposite in="SourceAlpha" in2="o2" operator="out" result="i2"/>
+      <feFlood flood-color="#3B241B" flood-opacity="0.18" result="c2"/>
+      <feComposite in="c2" in2="i2" operator="in" result="sh"/>
+      <feMerge>
+        <feMergeNode in="SourceGraphic"/>
+        <feMergeNode in="hi"/>
+        <feMergeNode in="sh"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="triCream" cx="28%" cy="22%" r="85%">
+      <stop offset="0%" stop-color="#FFF8EE"/>
+      <stop offset="56%" stop-color="#EBD3AE"/>
+      <stop offset="100%" stop-color="#C8A97C"/>
+    </radialGradient>
+    <radialGradient id="rulerTerra" cx="28%" cy="24%" r="85%">
+      <stop offset="0%" stop-color="#D6704E"/>
+      <stop offset="58%" stop-color="#B84A28"/>
+      <stop offset="100%" stop-color="#8B3318"/>
+    </radialGradient>
+    <filter id="softBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#drop)">
+    <!-- Sculpted 3D clay straight drafting ruler behind/angled -->
+    <g transform="rotate(-38 96 86)">
+      <rect filter="url(#clay)" x="24" y="68" width="144" height="34" rx="12" fill="url(#rulerTerra)"/>
+      <!-- Ruler tick marks -->
+      <line x1="44" y1="68" x2="44" y2="79" stroke="#FFF7EC" stroke-opacity="0.72" stroke-width="3" stroke-linecap="round"/>
+      <line x1="60" y1="68" x2="60" y2="76" stroke="#FFF7EC" stroke-opacity="0.58" stroke-width="2.6" stroke-linecap="round"/>
+      <line x1="76" y1="68" x2="76" y2="80" stroke="#FFF7EC" stroke-opacity="0.72" stroke-width="3" stroke-linecap="round"/>
+      <line x1="92" y1="68" x2="92" y2="76" stroke="#FFF7EC" stroke-opacity="0.58" stroke-width="2.6" stroke-linecap="round"/>
+      <line x1="108" y1="68" x2="108" y2="80" stroke="#FFF7EC" stroke-opacity="0.72" stroke-width="3" stroke-linecap="round"/>
+      <line x1="124" y1="68" x2="124" y2="76" stroke="#FFF7EC" stroke-opacity="0.58" stroke-width="2.6" stroke-linecap="round"/>
+      <line x1="140" y1="68" x2="140" y2="79" stroke="#FFF7EC" stroke-opacity="0.72" stroke-width="3" stroke-linecap="round"/>
+    </g>
+
+    <!-- Soft contact shadow beneath triangle -->
+    <path d="M38 50 L138 144 L38 144 Z" fill="#3B241B" opacity="0.14" filter="url(#softBlur)" transform="translate(3,5)"/>
+
+    <!-- Plump 3D clay drafting triangle (set square) with triangular cutout -->
+    <path filter="url(#clay)" fill-rule="evenodd" d="M36 44 C36 35, 46 30, 53 37 L144 128 C151 135, 146 145, 137 145 L48 145 C41 145, 36 140, 36 133 Z M58 78 L58 123 L103 123 Z" fill="url(#triCream)"/>
+
+    <!-- Recessed measurement ticks on triangle -->
+    <line x1="44" y1="66" x2="50" y2="66" stroke="#6F5A4C" stroke-width="3" stroke-linecap="round"/>
+    <line x1="44" y1="84" x2="52" y2="84" stroke="#6F5A4C" stroke-width="3" stroke-linecap="round"/>
+    <line x1="44" y1="102" x2="50" y2="102" stroke="#6F5A4C" stroke-width="3" stroke-linecap="round"/>
+    <line x1="68" y1="137" x2="68" y2="131" stroke="#6F5A4C" stroke-width="3" stroke-linecap="round"/>
+    <line x1="88" y1="137" x2="88" y2="129" stroke="#6F5A4C" stroke-width="3" stroke-linecap="round"/>
+    <line x1="108" y1="137" x2="108" y2="131" stroke="#6F5A4C" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>

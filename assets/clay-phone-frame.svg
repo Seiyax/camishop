@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 720" fill="none" role="img" aria-label="Clay smartphone frame">
+  <defs>
+    <filter id="clayFrame" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4.5" result="b1"/>
+      <feOffset dx="4.5" dy="5.5" in="b1" result="o1"/>
+      <feComposite in="SourceAlpha" in2="o1" operator="out" result="i1"/>
+      <feFlood flood-color="#FFF7EC" flood-opacity="0.6" result="c1"/>
+      <feComposite in="c1" in2="i1" operator="in" result="hi"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5.5" result="b2"/>
+      <feOffset dx="-5.5" dy="-6.5" in="b2" result="o2"/>
+      <feComposite in="SourceAlpha" in2="o2" operator="out" result="i2"/>
+      <feFlood flood-color="#3B241B" flood-opacity="0.18" result="c2"/>
+      <feComposite in="c2" in2="i2" operator="in" result="sh"/>
+      <feMerge>
+        <feMergeNode in="SourceGraphic"/>
+        <feMergeNode in="hi"/>
+        <feMergeNode in="sh"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="bodyGrad" cx="25%" cy="15%" r="90%">
+      <stop offset="0%" stop-color="#F7EBD8"/>
+      <stop offset="52%" stop-color="#EBD3AE"/>
+      <stop offset="100%" stop-color="#CEAE80"/>
+    </radialGradient>
+    <linearGradient id="btnGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E2C498"/>
+      <stop offset="100%" stop-color="#BE9A6C"/>
+    </linearGradient>
+    <mask id="screenCutout">
+      <rect x="0" y="0" width="360" height="720" fill="white"/>
+      <rect x="30" y="34" width="300" height="652" rx="44" fill="black"/>
+    </mask>
+  </defs>
+
+  <!-- Soft clay side buttons -->
+  <rect x="6" y="156" width="12" height="50" rx="6" fill="url(#btnGrad)"/>
+  <rect x="6" y="220" width="12" height="50" rx="6" fill="url(#btnGrad)"/>
+  <rect x="342" y="182" width="12" height="76" rx="6" fill="url(#btnGrad)"/>
+
+  <!-- Main clay shell with screen cutout -->
+  <g>
+    <g mask="url(#screenCutout)">
+      <rect filter="url(#clayFrame)" x="14" y="16" width="332" height="688" rx="58" fill="url(#bodyGrad)"/>
+    </g>
+    <!-- Inner bezel cushion lip -->
+    <rect x="30" y="34" width="300" height="652" rx="44" stroke="#3B241B" stroke-opacity="0.14" stroke-width="3" fill="none"/>
+    <rect x="28" y="32" width="304" height="656" rx="46" stroke="#FFF7EC" stroke-opacity="0.5" stroke-width="2" fill="none"/>
+  </g>
+
+  <!-- Subtle top speaker pill & camera dot -->
+  <rect x="144" y="48" width="72" height="14" rx="7" fill="#3B241B" opacity="0.88"/>
+  <circle cx="204" cy="55" r="3.5" fill="#6F5A4C"/>
+</svg>

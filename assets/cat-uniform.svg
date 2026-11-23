@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" fill="none" role="img" aria-label="Clay PE uniform shirt">
+  <defs>
+    <filter id="drop" x="-22%" y="-18%" width="144%" height="146%">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#3B241B" flood-opacity="0.16"/>
+    </filter>
+    <filter id="clay" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3.5" result="b1"/>
+      <feOffset dx="3.5" dy="4" in="b1" result="o1"/>
+      <feComposite in="SourceAlpha" in2="o1" operator="out" result="i1"/>
+      <feFlood flood-color="#FFF7EC" flood-opacity="0.7" result="c1"/>
+      <feComposite in="c1" in2="i1" operator="in" result="hi"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="b2"/>
+      <feOffset dx="-4" dy="-5" in="b2" result="o2"/>
+      <feComposite in="SourceAlpha" in2="o2" operator="out" result="i2"/>
+      <feFlood flood-color="#3B241B" flood-opacity="0.16" result="c2"/>
+      <feComposite in="c2" in2="i2" operator="in" result="sh"/>
+      <feMerge>
+        <feMergeNode in="SourceGraphic"/>
+        <feMergeNode in="hi"/>
+        <feMergeNode in="sh"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="shirtCream" cx="32%" cy="22%" r="82%">
+      <stop offset="0%" stop-color="#FFFDF8"/>
+      <stop offset="56%" stop-color="#FFF2DE"/>
+      <stop offset="100%" stop-color="#DFC49F"/>
+    </radialGradient>
+    <radialGradient id="collarTerra" cx="35%" cy="25%" r="80%">
+      <stop offset="0%" stop-color="#E47A58"/>
+      <stop offset="58%" stop-color="#B84A28"/>
+      <stop offset="100%" stop-color="#94381C"/>
+    </radialGradient>
+    <radialGradient id="tagButter" cx="30%" cy="25%" r="80%">
+      <stop offset="0%" stop-color="#FFF3C0"/>
+      <stop offset="60%" stop-color="#F5E0A0"/>
+      <stop offset="100%" stop-color="#DBB154"/>
+    </radialGradient>
+    <filter id="softBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#drop)">
+    <!-- Plump TSU PE uniform shirt silhouette -->
+    <path filter="url(#clay)" d="M62 40 L40 48 C30 52, 22 61, 20 71 L16 88 C15 95, 20 101, 27 102 L47 104 L47 136 C47 146, 55 153, 65 153 L115 153 C125 153, 133 146, 133 136 L133 104 L153 102 C160 101, 165 95, 164 88 L160 71 C158 61, 150 52, 140 48 L118 40 C112 52, 102 58, 90 58 C78 58, 68 52, 62 40 Z" fill="url(#shirtCream)"/>
+
+    <!-- Plump terracotta collar trim -->
+    <path filter="url(#clay)" d="M61 40 C68 57, 79 65, 90 65 C101 65, 112 57, 119 40 C115 36, 109 36, 106 41 C102 48, 96 52, 90 52 C84 52, 78 48, 74 41 C71 36, 65 36, 61 40 Z" fill="url(#collarTerra)"/>
+
+    <!-- Terracotta sleeve stripes -->
+    <path d="M21 84 L46 88" stroke="#B84A28" stroke-width="8" stroke-linecap="round"/>
+    <path d="M159 84 L134 88" stroke="#B84A28" stroke-width="8" stroke-linecap="round"/>
+
+    <!-- Embroidered clay chest stripe / badge -->
+    <rect filter="url(#clay)" x="99" y="81" width="21" height="13" rx="6.5" fill="url(#collarTerra)"/>
+
+    <!-- Sealed brand-new hanging tag -->
+    <path d="M90 56 C90 70, 74 74, 70 84" stroke="#6F5A4C" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+    <rect x="57" y="84" width="24" height="32" rx="8" fill="#3B241B" opacity="0.14" filter="url(#softBlur)" transform="translate(2,3)"/>
+    <rect filter="url(#clay)" x="56" y="82" width="24" height="32" rx="8" fill="url(#tagButter)" transform="rotate(-8 68 98)"/>
+    <circle cx="69" cy="89" r="3" fill="#FBF3E6"/>
+
+    <!-- Soft top-left highlight -->
+    <ellipse cx="64" cy="70" rx="14" ry="8" transform="rotate(-18 64 70)" fill="#FFF7EC" opacity="0.45" filter="url(#softBlur)"/>
+  </g>
+</svg>
