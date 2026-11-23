@@ -41,6 +41,7 @@
   --radius-lg: 38px;
   --radius-pill: 999px;
   --container: 1080px;
+  --ease-clay: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 *,
@@ -125,6 +126,7 @@ p {
 
 .section {
   padding-block: 56px;
+  scroll-margin-top: 84px;
 }
 
 .section-head {
@@ -193,6 +195,11 @@ p {
   justify-content: center;
   flex-shrink: 0;
   filter: drop-shadow(0 6px 12px rgba(59, 36, 27, 0.16));
+  transition: transform 280ms var(--ease-clay);
+}
+
+.brand:hover .logo-housing {
+  transform: translateY(-1px) scale(1.05) rotate(-3deg);
 }
 
 .logo-housing--nav {
@@ -239,11 +246,23 @@ p {
   font-weight: 700;
   cursor: pointer;
   box-shadow: var(--clay-btn-shadow);
-  transition: background-color 140ms ease;
+  transition:
+    background-color 200ms var(--ease-clay),
+    transform 220ms var(--ease-clay),
+    box-shadow 220ms var(--ease-clay);
 }
 
 .btn-terracotta:hover {
   background-color: var(--terracotta-hover);
+  transform: translateY(-2px);
+  box-shadow:
+    inset 3px 3px 8px rgba(255, 255, 255, 0.25),
+    inset -3px -3px 8px rgba(59, 36, 27, 0.24),
+    0 14px 26px -8px rgba(59, 36, 27, 0.24);
+}
+
+.btn-terracotta:active {
+  transform: translateY(0);
 }
 
 .btn-nav {
@@ -307,14 +326,34 @@ p {
 }
 
 .site-nav a {
+  position: relative;
   font-size: 0.96rem;
   font-weight: 600;
   color: var(--cocoa);
   padding: 6px 2px;
+  transition: color 200ms var(--ease-clay);
+}
+
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2px;
+  height: 2px;
+  border-radius: 99px;
+  background-color: var(--terracotta);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 240ms var(--ease-clay);
 }
 
 .site-nav a:hover {
   color: var(--terracotta);
+}
+
+.site-nav a:hover::after {
+  transform: scaleX(1);
 }
 
 .header-actions {
@@ -455,12 +494,25 @@ p {
   box-shadow:
     inset 3px 3px 7px rgba(255, 255, 255, 0.4),
     inset -3px -3px 7px rgba(59, 36, 27, 0.08);
-  transition: background-color 140ms ease, border-color 140ms ease;
+  transition:
+    background-color 220ms var(--ease-clay),
+    border-color 220ms var(--ease-clay),
+    transform 220ms var(--ease-clay),
+    box-shadow 220ms var(--ease-clay);
 }
 
 .store-btn:hover {
   background-color: #E3C69A;
   border-color: rgba(59, 36, 27, 0.5);
+  transform: translateY(-2px);
+  box-shadow:
+    inset 3px 3px 7px rgba(255, 255, 255, 0.45),
+    inset -3px -3px 7px rgba(59, 36, 27, 0.10),
+    0 10px 18px -10px rgba(59, 36, 27, 0.2);
+}
+
+.store-btn:active {
+  transform: translateY(0);
 }
 
 .store-btn-text {
@@ -509,6 +561,12 @@ p {
   aspect-ratio: 360 / 720;
   z-index: 2;
   filter: drop-shadow(0 20px 24px rgba(59, 36, 27, 0.16));
+  animation: phoneBreath 7.2s ease-in-out infinite;
+}
+
+@keyframes phoneBreath {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
 }
 
 .phone-frame-svg {
@@ -586,6 +644,11 @@ p {
   border-radius: 18px;
   padding: 9px 11px;
   box-shadow: var(--clay-shadow-soft);
+  transition: transform 240ms var(--ease-clay);
+}
+
+.mini-listing:hover {
+  transform: translateY(-2px);
 }
 
 .mini-thumb {
@@ -720,6 +783,18 @@ p {
   background-color: var(--camel);
   color: var(--cocoa);
   box-shadow: var(--clay-shadow);
+  transition:
+    transform 260ms var(--ease-clay),
+    background-color 220ms var(--ease-clay),
+    box-shadow 260ms var(--ease-clay);
+}
+
+.clay-pill-row:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    inset 5px 5px 12px rgba(255, 255, 255, 0.5),
+    inset -5px -5px 12px rgba(59, 36, 27, 0.11),
+    0 18px 32px -10px rgba(59, 36, 27, 0.2);
 }
 
 .icon-well {
@@ -733,6 +808,11 @@ p {
   justify-content: center;
   flex-shrink: 0;
   box-shadow: var(--clay-shadow-soft);
+  transition: transform 260ms var(--ease-clay);
+}
+
+.clay-pill-row:hover .icon-well {
+  transform: scale(1.06);
 }
 
 .glimpse-text {
@@ -756,6 +836,17 @@ p {
   justify-content: space-between;
   gap: 18px;
   border-radius: var(--radius-lg);
+  transition:
+    transform 300ms var(--ease-clay),
+    box-shadow 300ms var(--ease-clay);
+}
+
+.bento-grid .clay-tile:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    inset 5px 5px 12px rgba(255, 255, 255, 0.5),
+    inset -5px -5px 12px rgba(59, 36, 27, 0.12),
+    0 22px 38px -12px rgba(59, 36, 27, 0.22);
 }
 
 .bento-copy h3 {
@@ -775,6 +866,11 @@ p {
   height: 108px;
   align-self: flex-end;
   flex-shrink: 0;
+  transition: transform 340ms var(--ease-clay);
+}
+
+.bento-grid .clay-tile:hover .bento-art {
+  transform: translateY(-4px) scale(1.05) rotate(-2deg);
 }
 
 .bento-art--top {
@@ -831,6 +927,15 @@ p {
   color: var(--cocoa);
   font-weight: 700;
   box-shadow: var(--clay-shadow-soft);
+  transition: transform 240ms var(--ease-clay), box-shadow 240ms var(--ease-clay);
+}
+
+.campus-pill:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    inset 3px 3px 8px rgba(255, 255, 255, 0.55),
+    inset -3px -3px 8px rgba(59, 36, 27, 0.11),
+    0 12px 22px -8px rgba(59, 36, 27, 0.2);
 }
 
 /* =========================================================
@@ -1163,21 +1268,29 @@ p {
 }
 
 /* =========================================================
-   Reduced Motion Preference
+   Smooth Scroll & Entrance Reveal Animations
    ========================================================= */
 
+.js-ready [data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 640ms var(--ease-clay),
+    transform 680ms var(--ease-clay);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.js-ready [data-reveal].is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gentle motion scaling when OS reduces desktop animations */
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  .float-obj {
-    animation: none !important;
-  }
-
-  .soon-toast,
-  .btn-terracotta,
-  .store-btn {
-    transition: none !important;
+  .js-ready [data-reveal] {
+    transform: translateY(10px);
+    transition:
+      opacity 480ms var(--ease-clay),
+      transform 520ms var(--ease-clay);
   }
 }
